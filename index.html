@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>云栖LinkBase</title>
+    <style>
+      :root {
+        --sidebar-width: 240px;
+        --glass-bg: rgba(255, 255, 255, 0.25);
+        --glass-border: rgba(255, 255, 255, 0.3);
+        --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        --text-main: #1d1d1f;
+        --text-sub: #484848;
+        --primary-color: #2563eb;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "sf pro text",
+          "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        color: var(--text-main);
+        display: flex;
+        min-height: 100vh;
+        /* 动态渐变背景 */
+        background: linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+      }
+
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* 玻璃拟态通用类 */
+      .glass-effect {
+        background: var(--glass-bg);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--glass-shadow);
+      }
+
+      /* 侧边栏 */
+      .sidebar {
+        width: var(--sidebar-width);
+        height: 96vh; /* 稍微留一点空隙看起来更像悬浮 */
+        position: fixed;
+        top: 2vh;
+        left: 2vh;
+        border-radius: 24px;
+        padding: 15px 20px;
+        display: flex;
+        flex-direction: column;
+        z-index: 100;
+      }
+
+      .logo {
+        font-size: 22px;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 40px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+      }
+
+      .nav-menu {
+        list-style: none;
+        overflow-y: auto;
+        flex: 1;
+      }
+
+      /* 隐藏滚动条但保留功能 */
+      .nav-menu::-webkit-scrollbar {
+        width: 0;
+      }
+
+      .nav-item {
+        padding: 14px 20px;
+        cursor: pointer;
+        border-radius: 16px;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 8px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+      }
+
+      .nav-item:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateX(5px);
+      }
+
+      .nav-item.active {
+        background: rgba(255, 255, 255, 0.5);
+        color: #000;
+        font-weight: 700;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      /* 主内容区 */
+      .main-content {
+        flex: 1;
+        margin-left: calc(var(--sidebar-width) + 4vh);
+        padding: 40px;
+        padding-top: 60px;
+      }
+
+      /* 搜索框容器 */
+      .search-container {
+        max-width: 600px;
+        margin: 0 auto 60px auto;
+        position: relative;
+      }
+
+      .search-input {
+        width: 100%;
+        padding: 18px 25px;
+        border-radius: 50px;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        font-size: 16px;
+        outline: none;
+        transition: all 0.3s;
+        color: #333;
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(10px);
+      }
+
+      .search-input:focus {
+        background: rgba(255, 255, 255, 0.9);
+        border-color: #fff;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        transform: scale(1.02);
+      }
+
+      .search-input::placeholder {
+        color: #666;
+      }
+
+      /* 分类标题 */
+      .category-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 25px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 25px;
+        margin-bottom: 50px;
+      }
+
+      /* 卡片样式 */
+      .card {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 15px;
+        text-decoration: none;
+        border-radius: 20px;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* 覆盖通用 glass 效果以适应卡片 */
+      .card.glass-effect {
+        background: rgba(
+          255,
+          255,
+          255,
+          0.45
+        ); /* 卡片稍微不透明一点，增加可读性 */
+      }
+
+      .card:hover {
+        transform: translateY(-8px) scale(1.02);
+        background: rgba(255, 255, 255, 0.75);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        border-color: rgba(255, 255, 255, 0.8);
+      }
+
+      .card-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+
+      .card-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 18px;
+        margin-right: 15px;
+        box-shadow: 0 4px 10px rgba(118, 75, 162, 0.3);
+      }
+
+      .card-name {
+        font-weight: 700;
+        font-size: 17px;
+        color: #1a1a1a;
+      }
+
+      .card-desc {
+        font-size: 13px;
+        color: #555;
+        line-height: 1.6;
+        opacity: 0.8;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        /* 回退方案：使用标准属性 */
+        max-height: 2.4em; /* 2行 × 1.6 line-height */
+        display: -webkit-box;
+        display: box;
+      }
+
+      /* 移动端适配 */
+      @media (max-width: 768px) {
+        .sidebar {
+          display: none;
+        }
+        .main-content {
+          margin-left: 0;
+          padding: 20px;
+          padding-top: 40px;
+        }
+        .card:hover {
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="sidebar glass-effect">
+      <div class="logo">🔮 云栖LinkBase</div>
+      <ul class="nav-menu" id="navMenu"></ul>
+      <div
+        style="
+          margin-top: auto;
+          font-size: 12px;
+          color: rgba(255, 255, 255, 0.6);
+          text-align: center;
+        "
+      >
+        &copy; 2025 My Dashboard
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <div class="search-container">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="🔍 搜索..."
+          onkeyup="search(this.value)"
+        />
+      </div>
+
+      <div id="contentArea"></div>
+    </main>
+
+    <script src="data.js"></script>
+
+    <script>
+      // 渲染逻辑与之前相同，稍微调整了卡片结构以适应新样式
+      function render() {
+        const menuContainer = document.getElementById("navMenu");
+        const contentContainer = document.getElementById("contentArea");
+
+        // 检查 data.js 是否加载成功
+        if (typeof navData === "undefined") {
+          contentContainer.innerHTML =
+            '<div style="color:white; text-align:center;">⚠️ 请确保 data.js 文件存在且格式正确</div>';
+          return;
+        }
+
+        menuContainer.innerHTML = "";
+        contentContainer.innerHTML = "";
+
+        navData.forEach((cat, index) => {
+          // 1. 侧边栏项目
+          const li = document.createElement("li");
+          li.className = "nav-item";
+          li.textContent = cat.category.replace(/^[^\s]+\s/, ""); // 去掉emoji只留文字，显得更简洁，或者保留看你喜好
+          if (cat.category.includes(" ")) li.textContent = cat.category; // 还是保留原样吧
+
+          li.onclick = () => {
+            // 移除其他 active
+            document
+              .querySelectorAll(".nav-item")
+              .forEach((el) => el.classList.remove("active"));
+            li.classList.add("active");
+            document
+              .getElementById(`cat-${index}`)
+              .scrollIntoView({ behavior: "smooth", block: "start" });
+          };
+          menuContainer.appendChild(li);
+
+          // 2. 内容区域
+          const section = document.createElement("div");
+          section.className = "category-section";
+          section.id = `cat-${index}`;
+
+          const title = document.createElement("div");
+          title.className = "category-title";
+          title.innerHTML = cat.category;
+          section.appendChild(title);
+
+          const grid = document.createElement("div");
+          grid.className = "grid";
+
+          cat.items.forEach((item) => {
+            const iconChar = item.name.charAt(0).toUpperCase();
+            // 为每个图标生成随机渐变色，增加视觉丰富度 (可选)
+            // 这里默认使用统一的紫色渐变
+
+            const card = `
+                        <a href="${
+                          item.url
+                        }" target="_blank" class="card glass-effect">
+                            <div class="card-header">
+                                <div class="card-icon">${iconChar}</div>
+                                <div class="card-name">${item.name}</div>
+                            </div>
+                            <div class="card-desc">${
+                              item.desc || "点击访问 " + item.name
+                            }</div>
+                        </a>
+                    `;
+            grid.innerHTML += card;
+          });
+
+          section.appendChild(grid);
+          contentContainer.appendChild(section);
+        });
+      }
+
+      function search(keyword) {
+        const cards = document.querySelectorAll(".card");
+        keyword = keyword.toLowerCase();
+        cards.forEach((card) => {
+          const text = card.innerText.toLowerCase();
+          // 搜索时如果不匹配，直接隐藏
+          card.style.display = text.includes(keyword) ? "flex" : "none";
+        });
+      }
+
+      render();
+    </script>
+  </body>
+</html>
