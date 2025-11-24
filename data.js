@@ -2,7 +2,7 @@
  * @Author: yangy aidreams@sina.com
  * @Date: 2025-11-21 16:33:12
  * @LastEditors: yangy aidreams@sina.com
- * @LastEditTime: 2025-11-24 14:04:48
+ * @LastEditTime: 2025-11-24 14:24:46
  * @FilePath: /daohang/data.js
  * @Description: 
  * 🔍 搜索
@@ -22,24 +22,33 @@
 */
 const navData = [
   {
-    category: "🔍 AI工具",
+    category: "🛠️ 常用工具",
     items: [
       {
-        name: "Gemini",
-        url: "https://gemini.google.com/",
-        desc: "谷歌AI助手",
+        name: "临时邮箱",
+        url: "https://temp-mail.org/zh/change",
+        desc: "临时邮箱",
       },
       {
-        name: "ChatGPT",
-        url: "https://chat.openai.com",
-        desc: "OpenAI 智能助手",
+        name: "文件转换器",
+        url: "https://convertio.co/zh/",
+        desc: "将您的文件转换成任意格式",
       },
       {
-        name: "Aistudio",
-        url: "https://aistudio.google.com/prompts/new_chat",
-        desc: "Google AI Studio",
+        name: "图片压缩",
+        url: "https://tinify.cn/",
+        desc: "图片压缩",
       },
-      { name: "Bilibili", url: "https://www.bilibili.com", desc: "干杯！" },
+      {
+        name: "图片获取工具",
+        url: "https://extract.pics/",
+        desc: "图片获取工具",
+      },
+      {
+        name: "地址生成器",
+        url: "https://address.nnuu.nyc.mn/",
+        desc: "地址生成器",
+      },
     ],
   },
   {
@@ -64,6 +73,16 @@ const navData = [
         name: "英语自学",
         url: "https://bewaters.me/limxtop/2021/08/18/English-introduction/",
         desc: "英语自学",
+      },
+      {
+        name: "巴别英语",
+        url: "https://www.babelabc.com/",
+        desc: "巴别英语",
+      },
+      {
+        name: "老友记",
+        url: "https://fangj.github.io/friends/",
+        desc: "老友记",
       },
     ],
   },
