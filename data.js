@@ -2,7 +2,7 @@
  * @Author: yangy aidreams@sina.com
  * @Date: 2025-11-21 16:33:12
  * @LastEditors: yangy aidreams@sina.com
- * @LastEditTime: 2025-11-24 13:42:49
+ * @LastEditTime: 2025-11-24 14:04:48
  * @FilePath: /daohang/data.js
  * @Description: 
  * 🔍 搜索
@@ -34,7 +34,11 @@ const navData = [
         url: "https://chat.openai.com",
         desc: "OpenAI 智能助手",
       },
-      { name: "GitHub", url: "https://github.com", desc: "代码托管平台" },
+      {
+        name: "Aistudio",
+        url: "https://aistudio.google.com/prompts/new_chat",
+        desc: "Google AI Studio",
+      },
       { name: "Bilibili", url: "https://www.bilibili.com", desc: "干杯！" },
     ],
   },
@@ -51,7 +55,16 @@ const navData = [
         url: "https://littlealchemy2.com/",
         desc: "LittleAlchemy2",
       },
-      { name: "Json格式化", url: "https://www.json.cn", desc: "在线JSON工具" },
+      {
+        name: "LetMeEnglish",
+        url: "https://letmeenglish.com/",
+        desc: "在线英语学习",
+      },
+      {
+        name: "英语自学",
+        url: "https://bewaters.me/limxtop/2021/08/18/English-introduction/",
+        desc: "英语自学",
+      },
     ],
   },
   {
