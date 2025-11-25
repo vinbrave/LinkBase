@@ -2,7 +2,7 @@
  * @Author: yangy aidreams@sina.com
  * @Date: 2025-11-21 16:33:12
  * @LastEditors: yangy aidreams@sina.com
- * @LastEditTime: 2025-11-24 14:24:46
+ * @LastEditTime: 2025-11-25 16:55:47
  * @FilePath: /daohang/data.js
  * @Description: 
  * 🔍 搜索
@@ -48,6 +48,11 @@ const navData = [
         name: "地址生成器",
         url: "https://address.nnuu.nyc.mn/",
         desc: "地址生成器",
+      },
+      {
+        name: "飞象老师",
+        url: "https://www.feixianglaoshi.com/",
+        desc: "飞象老师",
       },
     ],
   },
