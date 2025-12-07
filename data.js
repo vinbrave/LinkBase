@@ -2,8 +2,8 @@
  * @Author: yangy aidreams@sina.com
  * @Date: 2025-11-21 16:33:12
  * @LastEditors: yangy aidreams@sina.com
- * @LastEditTime: 2025-11-25 16:55:47
- * @FilePath: /daohang/data.js
+ * @LastEditTime: 2025-12-07 09:25:09
+ * @FilePath: /LinkBase/data.js
  * @Description: 
  * 🔍 搜索
 🛠️ 工具
@@ -89,6 +89,26 @@ const navData = [
         url: "https://fangj.github.io/friends/",
         desc: "老友记",
       },
+      {
+        name: "BBC儿童",
+        url: "https://www.cbeebies.com/",
+        desc: "BBC儿童",
+      },
+    ],
+  },
+  {
+    category: "🎨 AI资料",
+    items: [
+      {
+        name: "awesome-prompt-gallery",
+        url: "https://opennana.com/awesome-prompt-gallery/",
+        desc: "awesome-prompt-gallery",
+      },
+      {
+        name: "Unsplash",
+        url: "https://youmind.com/zh-CN/nano-banana-pro-prompts",
+        desc: "Unsplash",
+      },
     ],
   },
   {
@@ -96,6 +116,26 @@ const navData = [
     items: [
       { name: "Dribbble", url: "https://dribbble.com", desc: "设计灵感社区" },
       { name: "Unsplash", url: "https://unsplash.com", desc: "免费高清图库" },
+    ],
+  },
+  {
+    category: "🎮 影视导航",
+    items: [
+      {
+        name: "omofuna",
+        url: "https://www.omofuna.com/",
+        desc: "omofuna",
+      },
+      {
+        name: "555zxdy",
+        url: "https://www.555zxdy.com/",
+        desc: "555zxdy",
+      },
+      {
+        name: "tubitv",
+        url: "https://tubitv.com/",
+        desc: "tubitv",
+      },
     ],
   },
   // 复制上面的块 { ... } 即可添加新分类
