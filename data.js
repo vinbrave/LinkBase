@@ -2,7 +2,7 @@
  * @Author: yangy aidreams@sina.com
  * @Date: 2025-11-21 16:33:12
  * @LastEditors: yangy aidreams@sina.com
- * @LastEditTime: 2025-12-07 09:25:09
+ * @LastEditTime: 2025-12-07 09:53:23
  * @FilePath: /LinkBase/data.js
  * @Description: 
  * 🔍 搜索
@@ -100,7 +100,7 @@ const navData = [
     category: "🎨 AI资料",
     items: [
       {
-        name: "awesome-prompt-gallery",
+        name: "OpenNana提示词图库",
         url: "https://opennana.com/awesome-prompt-gallery/",
         desc: "awesome-prompt-gallery",
       },
@@ -135,6 +135,21 @@ const navData = [
         name: "tubitv",
         url: "https://tubitv.com/",
         desc: "tubitv",
+      },
+    ],
+  },
+  {
+    category: "📱 游戏下载",
+    items: [
+      {
+        name: "OnlineGames",
+        url: "https://www.onlinegames.io/",
+        desc: "OnlineGames",
+      },
+      {
+        name: "桌游合集",
+        url: "https://game.hullqin.cn/",
+        desc: "桌游合集",
       },
     ],
   },
