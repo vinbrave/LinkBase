@@ -116,6 +116,7 @@ const navData = [
     items: [
       { name: "Dribbble", url: "https://dribbble.com", desc: "设计灵感社区" },
       { name: "Unsplash", url: "https://unsplash.com", desc: "免费高清图库" },
+      { name: "bestdesignsonx", url: "https://bestdesignsonx.com/", desc: "bestdesignsonx" },
     ],
   },
   {
