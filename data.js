@@ -2,7 +2,7 @@
  * @Author: yangy aidreams@sina.com
  * @Date: 2025-11-21 16:33:12
  * @LastEditors: yangy aidreams@sina.com
- * @LastEditTime: 2025-12-07 09:53:23
+ * @LastEditTime: 2025-12-10 15:10:29
  * @FilePath: /LinkBase/data.js
  * @Description: 
  * 🔍 搜索
@@ -109,6 +109,11 @@ const navData = [
         url: "https://youmind.com/zh-CN/nano-banana-pro-prompts",
         desc: "Unsplash",
       },
+      {
+        name: "Discover Amazing Content",
+        url: "https://snackprompt.com/",
+        desc: "一个收集Prompt的网站",
+      },
     ],
   },
   {
@@ -116,7 +121,11 @@ const navData = [
     items: [
       { name: "Dribbble", url: "https://dribbble.com", desc: "设计灵感社区" },
       { name: "Unsplash", url: "https://unsplash.com", desc: "免费高清图库" },
-      { name: "bestdesignsonx", url: "https://bestdesignsonx.com/", desc: "bestdesignsonx" },
+      {
+        name: "bestdesignsonx",
+        url: "https://bestdesignsonx.com/",
+        desc: "bestdesignsonx",
+      },
     ],
   },
   {
@@ -151,6 +160,21 @@ const navData = [
         name: "桌游合集",
         url: "https://game.hullqin.cn/",
         desc: "桌游合集",
+      },
+    ],
+  },
+  {
+    category: "📱 优秀导航",
+    items: [
+      {
+        name: "软件平替",
+        url: "https://fmhy.net/",
+        desc: "软件平替",
+      },
+      {
+        name: "开源软件",
+        url: "https://openalternative.co/",
+        desc: "Discover Open Source Alternatives to Popular Software",
       },
     ],
   },
