@@ -2,7 +2,7 @@
  * @Author: yangy aidreams@sina.com
  * @Date: 2025-11-21 16:33:12
  * @LastEditors: yangy aidreams@sina.com
- * @LastEditTime: 2025-12-10 15:10:29
+ * @LastEditTime: 2025-12-10 15:15:01
  * @FilePath: /LinkBase/data.js
  * @Description: 
  * 🔍 搜索
@@ -24,6 +24,11 @@ const navData = [
   {
     category: "🛠️ 常用工具",
     items: [
+      {
+        name: "Yandex",
+        url: "https://yandex.com/",
+        desc: "一个很好的搜索资料的网站",
+      },
       {
         name: "临时邮箱",
         url: "https://temp-mail.org/zh/change",
@@ -175,6 +180,11 @@ const navData = [
         name: "开源软件",
         url: "https://openalternative.co/",
         desc: "Discover Open Source Alternatives to Popular Software",
+      },
+      {
+        name: "星云导航",
+        url: "https://www.xygalaxy.com/",
+        desc: "星云导航",
       },
     ],
   },
