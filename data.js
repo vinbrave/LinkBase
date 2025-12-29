@@ -2,7 +2,7 @@
  * @Author: yangy aidreams@sina.com
  * @Date: 2025-11-21 16:33:12
  * @LastEditors: yangy aidreams@sina.com
- * @LastEditTime: 2025-12-29 10:17:26
+ * @LastEditTime: 2025-12-29 10:43:28
  * @FilePath: /LinkBase/data.js
  * @Description: 
  * 🔍 搜索
@@ -103,6 +103,16 @@ const navData = [
         name: "英语视觉词汇",
         url: "https://www.languageguide.org/%E8%8B%B1%E8%AF%AD/%E8%AF%8D%E6%B1%87/",
         desc: "英语视觉词汇",
+      },
+      {
+        name: "英汉字典",
+        url: "https://tickurt.github.io/english-dictionary-web/",
+        desc: "英汉字典",
+      },
+      {
+        name: "LingoHut",
+        url: "https://www.lingohut.com/zh",
+        desc: "LingoHut",
       },
       {
         name: "Learn Your Way",
