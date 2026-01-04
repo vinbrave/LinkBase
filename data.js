@@ -2,7 +2,7 @@
  * @Author: yangy aidreams@sina.com
  * @Date: 2025-11-21 16:33:12
  * @LastEditors: yangy aidreams@sina.com
- * @LastEditTime: 2025-12-29 10:43:28
+ * @LastEditTime: 2026-01-04 17:16:15
  * @FilePath: /LinkBase/data.js
  * @Description: 
  * 🔍 搜索
@@ -83,6 +83,11 @@ const navData = [
         name: "英语自学",
         url: "https://bewaters.me/limxtop/2021/08/18/English-introduction/",
         desc: "英语自学",
+      },
+      {
+        name: "语法俱乐部",
+        url: "https://llwslc.github.io/grammar-club/",
+        desc: "语法俱乐部",
       },
       {
         name: "巴别英语",
