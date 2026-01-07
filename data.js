@@ -2,7 +2,7 @@
  * @Author: yangy aidreams@sina.com
  * @Date: 2025-11-21 16:33:12
  * @LastEditors: yangy aidreams@sina.com
- * @LastEditTime: 2026-01-04 17:16:15
+ * @LastEditTime: 2026-01-07 10:06:33
  * @FilePath: /LinkBase/data.js
  * @Description: 
  * 🔍 搜索
@@ -175,6 +175,11 @@ const navData = [
         name: "tubitv",
         url: "https://tubitv.com/",
         desc: "tubitv",
+      },
+      {
+        name: "i8k",
+        url: "https://i8k.tv/",
+        desc: "i8k",
       },
     ],
   },
