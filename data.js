@@ -2,7 +2,7 @@
  * @Author: yangy aidreams@sina.com
  * @Date: 2025-11-21 16:33:12
  * @LastEditors: yangy aidreams@sina.com
- * @LastEditTime: 2026-01-07 10:06:33
+ * @LastEditTime: 2026-01-07 14:22:23
  * @FilePath: /LinkBase/data.js
  * @Description: 
  * 🔍 搜索
@@ -180,6 +180,16 @@ const navData = [
         name: "i8k",
         url: "https://i8k.tv/",
         desc: "i8k",
+      },
+      {
+        name: "简单tv",
+        url: "https://jiandantv.com/",
+        desc: "简单tv",
+      },
+      {
+        name: "飞快tv",
+        url: "https://feikuai.tv/",
+        desc: "飞快tv",
       },
     ],
   },
