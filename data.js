@@ -2,7 +2,7 @@
  * @Author: yangy aidreams@sina.com
  * @Date: 2025-11-21 16:33:12
  * @LastEditors: yangy aidreams@sina.com
- * @LastEditTime: 2026-01-07 14:22:23
+ * @LastEditTime: 2026-01-09 10:24:23
  * @FilePath: /LinkBase/data.js
  * @Description: 
  * 🔍 搜索
@@ -190,6 +190,11 @@ const navData = [
         name: "飞快tv",
         url: "https://feikuai.tv/",
         desc: "飞快tv",
+      },
+      {
+        name: "美剧窝",
+        url: "https://www.1mj.cc/",
+        desc: "美剧窝",
       },
     ],
   },
